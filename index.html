@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Halaman E-commerce Sederhana</title>
+ <style>
+ body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #f9fafb, #eef2f7);
+  color: #333;
+  line-height: 1.6;
+ }
+header {
+ background: linear-gradient(90deg, #1e3c72, #2a5298);
+ color: #fff;
+ text-align: center;
+ padding: 40px 20px;
+  border-bottom: 4px solid #ffd369;
+ }
+ header h1 {
+font-size: 2.4rem;
+ letter-spacing: 1px;
+ font-weight: 700;
+ color: #ffd369;
+ }
+ nav ul {
+ display: flex;
+  justify-content: center;
+  list-style: none;
+ gap: 25px;
+ margin-top: 15px;
+ flex-wrap: wrap;
+  }
+ nav ul li a {
+  color: #fff;
+  font-weight: 600;
+ padding: 10px 16px;
+   border-radius: 8px;
+      text-decoration: none;
+    transition: 0.3s;
+    }
+    nav ul li a:hover {
+  background-color: #ffd369;
+     color: #222;
+ }
+  main {
+   padding: 30px 20px;
+   max-width: 1200px;
+   margin: 0 auto;
+  }
+
+
+
+
+    section {
+
+
+      margin-bottom: 60px;
+
+
+    }
+
+
+
+
+
+    h2 {
+
+
+      font-size: 2rem;
+
+
+      color: #2a5298;
+
+
+      font-weight: 700;
+
+
+      text-transform: uppercase;
+
+
+      margin-bottom: 20px;
+
+
+      text-align: center;
+
+
+    }
+
+
+
+
+
+    .produk-grid {
+
+
+      display: grid;
+
+
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+
+
+      gap: 30px;
+
+
+    }
+
+
+
+
+
+    .card {
+
+
+      background: #fff;
+
+
+      border-radius: 15px;
+
+
+      overflow: hidden;
+
+
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+
+
+      transition: 0.3s ease;
+
+
+      display: flex;
+
+
+      flex-direction: column;
+
+
+    }
+
+
+    .card:hover {
+
+
+      transform: translateY(-8px);
+
+
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+
+
+    }
+
+
+
+
+
+    .card figure {
+
+
+      text-align: center;
+
+
+      padding: 20px;
+
+
+    }
+
+
+    .card img {
+
+
+      max-width: 100%;
+
+
+      border-radius: 10px;
+
+
+    }
+
+
+    .card figcaption {
+
+
+      font-size: 1.2rem;
+
+
+      font-weight: bold;
+
+
+      color: #1e3c72;
+
+
+      margin-top: 10px;
+
+
+    }
+
+
+
+
+
+    .card p {
+
+
+      padding: 0 20px;
+
+
+      font-size: 0.95rem;
+
+
+      margin-top: 8px;
+
+
+    }
+
+
+
+
+
+    .card .harga {
+
+
+      font-size: 1.1rem;
+
+
+      font-weight: bold;
+
+
+      color: #e63946;
+
+
+      margin-top: 5px;
+
+
+    }
+
+
+
+
+
+    .card button {
+
+
+      margin: 20px auto;
+
+
+      padding: 12px 20px;
+
+
+      background: linear-gradient(90deg, #ff7e00, #ffb347);
+
+
+      color: #fff;
+
+
+      border: none;
+
+
+      border-radius: 10px;
+
+
+      cursor: pointer;
+
+
+      font-weight: bold;
+
+
+      font-size: 1rem;
+
+
+      transition: 0.3s;
+
+
+    }
+
+
+    .card button:hover {
+
+
+      background: linear-gradient(90deg, #e76c00, #ff944d);
+
+
+    }
+
+
+
+
+
+    footer {
+
+
+      background: #2a5298;
+
+
+      color: #fff;
+
+
+      text-align: center;
+
+
+      padding: 25px;
+
+
+      font-size: 0.95rem;
+
+
+      margin-top: 60px;
+
+
+      border-top: 4px solid #ffd369;
+
+
+    }
+
+
+
+
+
+    @media (max-width: 600px) {
+
+
+      nav ul {
+
+
+        flex-direction: column;
+
+
+        gap: 10px;
+
+
+      }
+
+
+      header h1 {
+
+
+        font-size: 1.8rem;
+
+
+      }
+
+
+      h2 {
+
+
+        font-size: 1.4rem;
+
+
+      }
+
+
+    }
+
+
+  </style>
+
+
+</head>
+
+
+<body>
+
+
+
+
+
+  <!-- HEADER -->
+
+
+  <header>
+
+
+   <h1>Rii store</h1>
+
+
+    <nav>
+
+
+      <ul>
+
+
+        <li><a href="#beranda">Beranda</a></li>
+
+
+        <li><a href="#produk">Produk</a></li>
+
+
+        <li><a href="#keranjang">Keranjang</a></li>
+
+
+        <li><a href="#kontak">Kontak</a></li>
+
+
+      </ul>
+
+
+    </nav>
+
+
+  </header>
+
+
+
+
+
+  <!-- MAIN -->
+
+
+  <main>
+
+
+    <!-- BERANDA -->
+
+
+    <section id="beranda">
+
+
+      <h2>Selamat Datang di Rii Store!</h2>
+
+
+      <p style="text-align: center;">Kami menyediakan hoodie dengan desain simple, stylish, dan nyaman dipakai.</p>
+
+
+      <p style="text-align: center;">Lihat koleksi terbaru kami di bagian <strong>Produk</strong> di bawah.</p>
+
+
+    </section>
+
+
+
+
+
+    <!-- PRODUK -->
+
+
+    <section id="produk">
+
+
+      <h2>Koleksi Produk Terbaru</h2>
+
+
+      <div class="produk-grid">
+
+
+        <!-- Produk 1 -->
+
+
+        <article class="card">
+
+
+          <figure>
+
+
+            <img src="Crewnech.jpg"Hoodie Hitam Klasik" />
+
+
+            <figcaption>Hoodie Hitam Klasik</figcaption>
+
+
+          </figure>
+
+
+          <p class="deskripsi">Hoodie warna hitam polos dengan bahan tebal, adem, dan nyaman. Cocok untuk tampilan santai, hangout, atau outfit harian. Dilengkapi kantong depan dan tali hoodie.</p>
+
+
+          <p class="harga">Rp200.000</p>
+
+
+          <button>Beli</button>
+
+
+        </article>
+
+
+
+
+
+        <!-- Produk 2 -->
+
+
+        <article class="card">
+
+
+          <figure>
+
+
+            <img src="Hoodie.jpg" alt="Crewneck Polos Hitam" />
+
+
+            <figcaption>Crewneck Polos Hitam</figcaption>
+
+
+          </figure>
+
+
+          <p class="deskripsi">Sweater crewneck tanpa tudung berbahan katun combed yang tebal dan halus. Ideal untuk tampilan minimalis atau layering outfit kasual sehari-hari.</p>
+
+
+          <p class="harga">Rp150.000</p>
+
+
+          <button>Beli</button>
+
+
+        </article>
+
+
+
+
+
+        <!-- Produk 3 -->
+
+
+        <article class="card">
+
+
+          <figure>
+
+
+            <img src="Jeans.jpg" alt="Jeans Slim Fit Pria" />
+
+
+            <figcaption>Jeans Slim Fit Pria</figcaption>
+
+
+          </figure>
+
+
+          <p class="deskripsi">Celana jeans pria dengan potongan slim fit dan bahan denim stretch yang nyaman dipakai. Jahitan kontras dan model klasik cocok untuk gaya kasual maupun semi-formal.</p>
+
+
+          <p class="harga">Rp170.000</p>
+
+
+          <button>Beli</button>
+
+
+        </article>
+
+
+      </div>
+
+
+    </section>
+
+
+
+
+
+    <!-- KERANJANG -->
+
+
+    <section id="keranjang">
+
+
+      <h2>Keranjang Belanja</h2>
+
+
+      <ul id="list-keranjang" style="text-align:center; list-style:none; padding:0;">
+
+
+        <li>Keranjang kamu masih kosong 😅</li>
+
+
+      </ul>
+
+
+    </section>
+
+
+
+
+
+    <!-- KONTAK -->
+
+
+    <section id="kontak">
+
+
+      <h2>Hubungi Kami</h2>
+
+
+      <p style="text-align: center;">📞 WhatsApp: <strong>089509279542</strong></p>
+
+
+      <p style="text-align: center;">📧 Email: <strong>fahrirafiandi2004@gmail.com</strong></p>
+
+
+
+      <p style="text-align: center;">📍 Alamat: Jl. Cikapundung raya no 21</p>
+
+
+    </section>
+
+
+  </main>
+
+
+
+
+
+  <!-- FOOTER -->
+
+
+  <footer>
+
+
+    <p>&copy; 2025 Toko Hoodie Online. Semua hak dilindungi.</p>
+
+
+  </footer>
+
+
+
+
+
+  <!-- JAVASCRIPT -->
+
+
+  <script>
+
+
+    const buttons = document.querySelectorAll(".card button");
+
+
+    const keranjangList = document.getElementById("list-keranjang");
+
+
+
+
+
+    buttons.forEach(button => {
+
+
+      button.addEventListener("click", () => {
+
+
+        const card = button.closest(".card");
+
+
+        const nama = card.querySelector("figcaption").textContent;
+
+
+        const harga = card.querySelector(".harga").textContent;
+
+
+
+
+
+        if (keranjangList.children[0] && keranjangList.children[0].textContent.includes("kosong")) {
+
+
+          keranjangList.innerHTML = "";
+
+
+        }
+
+
+
+
+
+        const li = document.createElement("li");
+
+
+        li.textContent = `${nama} - ${harga}`;
+
+
+        keranjangList.appendChild(li);
+
+
+      });
+
+
+    });
+
+
+  </script>
+
+
+</body>
+
+
+</html>
